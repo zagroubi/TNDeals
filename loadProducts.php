@@ -3,7 +3,7 @@
 
 $dsn = "mysql:host=localhost;port=3306;dbname=TNDeals;charset=utf8mb4";
 $username = "root";
-$password = "helloalaa";
+$password =  [REDACTED];
 
 
 $category = $_GET['category'] ? urldecode($_GET['category']) : '';
