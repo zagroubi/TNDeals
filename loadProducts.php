@@ -3,7 +3,7 @@
 
 $dsn = "mysql:host=localhost;port=3306;dbname=TNDeals;charset=utf8mb4";
 $username = "root";
-$password =  [REDACTED];
+$password = "helloalaa";
 
 
 $category = $_GET['category'] ? urldecode($_GET['category']) : '';
@@ -106,7 +106,7 @@ try {
                 <img src='{$product['image']}' alt='Product Image'>
                 <div class='card-content'>
                     <p>{$product['title']}</p>
-                    <hr>
+                    
                     <p>{$product['description']}</p>
                     <div id='prices'>
                         <p>{$product['before_discount']}</p>
@@ -114,8 +114,7 @@ try {
                         <p>| -$number DT</p>
                     </div>
                     <hr>
-                    <p>Supplier: <b>{$product['supplier']}</b></p>
-                    <p>Link: <a href='{$product['url']}' target=_blank>{$product['url']}</a></p>
+                    <p>{$product['supplier']} - <a href='{$product['url']}' target=_blank>{$product['url']}</a></p>
                 </div>
                 
             </div>";
