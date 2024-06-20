@@ -1,4 +1,13 @@
 /* GLOBALS */
+:root {
+    --blue: rgb(65, 65, 217);
+    --desc: #374853;
+    --yellow: yellow;
+    --green: rgb(43, 170, 0);
+    --red: rgb(170, 0, 0);
+    --orange: orange;
+
+}
 * {
     margin: 0;
     padding: 0;
@@ -8,9 +17,9 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    font-family: Arial, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.6;
-    background-color: #ddd;
+    background-color: #eee;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
@@ -21,62 +30,56 @@ body {
 
 /* HEADER */
 header {
-    background-color: #333;
-    padding: 20px 40px;
     text-align: center;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
 
-header ul {
+#logo {
+    color: var(--yellow);
+    font-size: 30px;
+    font-weight: bold;
+}
+#nav {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     flex-direction: row;
     gap: 20px;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-header ul li {
+#nav li {
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
     list-style-type: none;
 }
 
-header ul li a {
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
+#nav li a {
+    color: var(--blue);
+    font-size: 18px;
     text-transform: capitalize;
-}
-/* BACK TO THE TOP */
-#back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    background-color: #646464;
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 35px;
-    font-size: 20px;
-    cursor: pointer;
-    display: none;
-    z-index: 999;
+    text-decoration: none;
 }
 /* SEARCH BOX */
-.search-box {
-    flex-grow: 0.5;
+header .search-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: var(--blue);
+    padding: 15px 50px;
 }
 .search-box form{
     display: flex;
+    flex-grow: 0.3;
     margin: 0 auto;
-    background-color: #e9e9e9;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -93,10 +96,29 @@ header ul li a {
 .search-button {
     padding: 10px 20px;
     border: none;
-    background-color: #2196F3;
-    color: #fff;
+    background-color: var(--yellow);
+    color: black;
     font-size: 16px;
     cursor: pointer;
+    border-left: var(--blue) 1px solid;
+}
+
+/* BACK TO THE TOP */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--desc);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
 }
 
 /* MAIN */
@@ -114,27 +136,32 @@ header ul li a {
     flex-direction: column;
     align-items: center;
     flex-basis: 200px;
-
 }
 
 #filter form {
     width: 200px;
     position: absolute;
-    top: 212px;
+    top: 170px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
 
-#filter form hr {
-    margin-bottom: 10px;
-}
 
 #filter form > div {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+}
+
+#filter form h2 {
+    color: var(--blue);
+}
+
+#filter form label {
+    margin-left: 5px;
+    color: var(--desc);
 }
 
 
@@ -150,7 +177,7 @@ header ul li a {
 
 .card {
     background-color: white;
-    padding: 20px;
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -174,21 +201,21 @@ header ul li a {
     margin: 5px 0;
 }
 .card .card-content a {
-    color: rgb(70, 70, 222);
+    color: var(--blue);
     text-decoration: none;
 }
 .card .card-content a:hover {
-    color: rgb(111, 111, 233);
+    opacity: 0.7;
 }
 
 .card-content > p:nth-child(1){
     font-size: 20px;
     font-weight: bold;
-    color: rgb(65, 65, 217);
+    color: var(--blue);
 }
 .card-content > p:nth-child(3){
     font-weight: bold;
-    color: #7e7e7e;
+    color: var(--desc);
 }
 #prices {
     display: flex;
@@ -202,46 +229,36 @@ header ul li a {
     font-size: 20px;
 }
 #prices > p:nth-child(1){
-    color: rgb(170, 0, 0);
+    color: var(--red);
     text-decoration: solid 2px line-through #7e7e7e;
 }
 #prices > p:nth-child(2){
-    color: rgb(43, 170, 0);
+    color: var(--green);
 }
 #prices > p:nth-child(3){
-    color: #666666;
+    color: var(--desc);
     font-weight: normal;
 }
 
 .high::before {
     content: "High";
-    position: absolute;
-    top: 30px; 
-    right: 30px;
-    background-color: #f00; 
-    color: #fff;
-    padding: 5px 10px; 
-    border-radius: 5px;
+    background-color: red; 
 }
 
 .medium::before {
     content: "Medium";
-    position: absolute;
-    top: 30px; 
-    right: 30px;
-    background-color: rgb(233, 137, 12); 
-    color: #fff;
-    padding: 5px 10px; 
-    border-radius: 5px;
+    background-color: orange; 
 }
-
 .low::before {
     content: "Low";
+    background-color: green; 
+}
+.low::before,.medium::before,.high::before {
     position: absolute;
     top: 30px; 
     right: 30px;
-    background-color: rgb(120, 187, 11); 
     color: #fff;
+    font-weight: bold;
     padding: 5px 10px; 
     border-radius: 5px;
 }
@@ -249,7 +266,6 @@ header ul li a {
 
 /* Pagination */
 .pagination {
-    margin-top: 20px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -271,15 +287,15 @@ header ul li a {
 }
 
 .pagination .active {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--yellow);
+    color: #333;
 }
 
 
 /* Footer  */
 footer {
     margin-top: auto;
-    background-color: #333;
+    background-color: var(--blue);
     color: #fff;
     padding: 20px 0;
     text-align: center;
