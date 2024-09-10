@@ -1,9 +1,9 @@
 
 # Categories: Laptops - Desktops - Monitors - Phones - Accessories 
 
-from tunisianet import tnet_get_products
-from sbs import sbs_get_products
-from mytek import mytek_get_products
+from scrapers.tunisianet import tnet_get_products
+from scrapers.sbs import sbs_get_products
+from scrapers.mytek import mytek_get_products
 import pymysql
 
 
